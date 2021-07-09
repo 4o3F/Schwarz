@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "moe.exusiai.schwarz.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "MixinCommandManager"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
