@@ -99,12 +99,13 @@ public class ChunkStatus implements Comparable<ChunkStatus> {
         Integer endz = chunk.getPos().getEndZ();
         Box box = new Box(startx, 0, startz, endx, 256, endz);
         List<Entity> livingEntityList = new ArrayList<>();
-        chunk.collectEntities(null, box, livingEntityList, new Predicate<Entity>() {
-            @Override
-            public boolean test(Entity entity) {
-                return true;
-            }
-        });
+//        chunk.collectEntities(null, box, livingEntityList, new Predicate<Entity>() {
+//            @Override
+//            public boolean test(Entity entity) {
+//                return true;
+//            }
+//        });
+        livingEntityList = chunk.getWorld().getOtherEntities(null, box);
         for (Entity entity : livingEntityList) {
             if (livingEntityScore.get(entity.getType()) != null) {
                 score += livingEntityScore.get(entity.getType());
@@ -132,12 +133,13 @@ public class ChunkStatus implements Comparable<ChunkStatus> {
         Integer endz = chunk.getPos().getEndZ();
         Box box = new Box(startx, 0, startz, endx, 256, endz);
         List<Entity> entityList = new ArrayList<>();
-        chunk.collectEntities(null, box, entityList, new Predicate<Entity>() {
-            @Override
-            public boolean test(Entity entity) {
-                return true;
-            }
-        });
+//        chunk.collectEntities(null, box, entityList, new Predicate<Entity>() {
+//            @Override
+//            public boolean test(Entity entity) {
+//                return true;
+//            }
+//        });
+        entityList = chunk.getWorld().getOtherEntities(null, box);
         return entityList.size();
     }
 
