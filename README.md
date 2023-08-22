@@ -13,5 +13,7 @@ Used for my own server.
 Churrently it can only find the laggest chunk, more functions may add later.
 `/schwarz chunkanalyse` to find the laggest chunk
 
+</div>
+
 > [!NOTE]
 > Some really old code, just here for memorial
